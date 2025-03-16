@@ -9,37 +9,33 @@ backgroundImage: url('https://marp.app/assets/hero-background.svg')
 
 ![bg left:40% 80%](./img/logo.png)
 
-# **WORKSHOP**
+# **Nextcloud**
 
-Slides voor NAAM workshop van het IT-lab
+Slides voor de Nextcloud workshop van het IT-lab
 
 
 ---
 
-![bg left:100% 80%](./img/logo.png) <!-- Plaats voor logo voor openingsslide, foefel gerust met de sizes van de bg -->
+![bg left:100% 60%](./img/logo_nextcloud_blue.svg) <!-- Plaats voor logo voor openingsslide, foefel gerust met de sizes van de bg -->
 
 ---
 
 
 # Meevolgen op:
 
-https://hogent-it-lab.github.io/NAAMREPOSITORY/slides <!-- URL naar de slides -->
+https://hogent-it-lab.github.io/nextcloud-workshop/slides <!-- URL naar de slides -->
 
 ![QR bg right contain](./img/link_qr.png) <!-- QR-code naar de slides -->
 
 ---
 
-# Wat is [WORKSHOP-ONDERWERP]?
+# Wat is Nextcloud?
 
 - Eerste slide
-- Korte uiteenzetting misschien?
-- Dit kies je natuurlijk allemaal zelf!
 
 
 ---
 
-# Waarom [WORKSHOP-ONDERWERP]?
+# Waarom Nextcloud?
 
 - Dit is een tweede slide
-- Je begint nu wel het plaatje te zien
-- Nu kan je copy-pasten en customizen naar hartelust!
