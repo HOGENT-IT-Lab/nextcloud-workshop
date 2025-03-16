@@ -31,7 +31,9 @@ https://hogent-it-lab.github.io/nextcloud-workshop/slides <!-- URL naar de slide
 
 # Wat is Nextcloud?
 
-- Eerste slide
+- Jouw eigen private cloud!
+- Eigen beheer van data
+- Grafische interface om eenvoudig in te loggen en bestanden te beheren
 
 
 ---
