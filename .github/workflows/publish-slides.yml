@@ -1,7 +1,11 @@
 name: "Export and publish slides"
 on:
-  # Only add manual trigger for now
+  # Add trigger on push to main branch
+  push:
+    branches: ["main"]
+  # Add manual trigger option
   workflow_dispatch:
+
 
 jobs:
   publish:
