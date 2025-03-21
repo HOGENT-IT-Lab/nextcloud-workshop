@@ -1,0 +1,3 @@
+.vagrant
+scripts/nextcloud/nextcloud
+scripts/nextcloud/nextcloud-sqlbkp.sql
