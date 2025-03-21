@@ -46,10 +46,6 @@ nextcloud-workshop.it-lab.be/slides <!-- URL naar de slides -->
 
 ---
 
-
-
----
-
 # Demo - Docker
 
 - Opzetten van een eigen Nextcloud instantie
