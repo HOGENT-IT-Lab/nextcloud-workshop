@@ -97,6 +97,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       node.vm.provider :virtualbox do |vb|
         vb.memory = host['memory'] if host.key? 'memory'
         vb.cpus = host['cpus'] if host.key? 'cpus'
+        vb.name = host['name'].capitalize if host.key? 'name'
 
         # Add VM to a VirtualBox group
         # WARNING: if the name of the current directory is the same as the
