@@ -1,11 +1,11 @@
 services:
   db:
-    container_name: mariadb
+    container_name: mariadb-provisioned
     image: mariadb:10.6
     restart: always
     command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
     volumes:
-      - /home/vagrant/nextcloud/database:/var/lib/mysql
+      - /home/vagrant/nextcloud-provisioned/database:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=test
       - MYSQL_PASSWORD=test
@@ -13,15 +13,15 @@ services:
       - MYSQL_USER=nextcloud
 
   app:
-    container_name: nextcloud
+    container_name: nextcloud-provisioned
     image: nextcloud:29.0.2
     restart: always
     ports:
-      - 8080:80
+      - 8081:80
     links:
       - db
     volumes:
-      - /home/vagrant/nextcloud/nextcloud:/var/www/html
+      - /home/vagrant/nextcloud-provisioned/nextcloud:/var/www/html
     environment:
       - MYSQL_PASSWORD=test
       - MYSQL_DATABASE=nextcloud

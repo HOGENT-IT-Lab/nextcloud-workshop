@@ -31,7 +31,7 @@ dnf install --assumeyes \
   yum-utils \
   git \
   wget \
-  mariadb
+  mariadb \
 
 
 log 'Add Docker repository and install Docker on the server'
@@ -55,7 +55,7 @@ log 'Enable and start Docker'
 systemctl enable --now docker
 systemctl start docker
 
-log 'Starting up Nextcloud instance'
+log 'Starting up clean Nextcloud instance'
 
 # Create Nextcloud directory
 
@@ -75,26 +75,46 @@ docker compose -f /home/vagrant/nextcloud/docker-compose.yaml up -d
 sleep 30
 
 
-# log 'Provision Nextcloud instance'
+log 'Starting up provisioned Nextcloud instance'
 
-# mkdir -p /home/vagrant/nextcloud/nextcloud
+# Create Nextcloud directory
 
-# cp -R --remove-destination "${PROVISIONING_FILES}"/nextcloud /home/vagrant/nextcloud/
+mkdir -p /home/vagrant/nextcloud-provisioned
 
-# chmod -R 777 /home/vagrant/nextcloud/nextcloud/ # DO NOT DO THIS EVER JUST FOR THE POC PLEASE GOD
+# Provision docker compose file
 
-# # Restore database 
-
-# log 'Delete existing database tables'
-
-# mysql -h 172.18.0.2 -u nextcloud -ptest -e "DROP DATABASE nextcloud" 
-
-# mysql -h 172.18.0.2 -u nextcloud -ptest -e "CREATE DATABASE nextcloud"
+cp "${PROVISIONING_FILES}"/docker-compose-provisioned.yaml /home/vagrant/nextcloud-provisioned/docker-compose.yaml
 
 
-# log 'Restore database'
+# Start docker containers using docker compose
 
-# mysql -h 172.18.0.2 -u nextcloud -ptest nextcloud < "${PROVISIONING_FILES}"/nextcloud-sqlbkp.sql
+docker compose -f /home/vagrant/nextcloud-provisioned/docker-compose.yaml up -d
 
-# docker restart nextcloud mariadb
+# Give compose some time to spin up
+sleep 30
 
+log 'Provision Nextcloud instance'
+
+mkdir -p /home/vagrant/nextcloud-provisioned/nextcloud
+
+cp -R --remove-destination "${PROVISIONING_FILES}"/nextcloud /home/vagrant/nextcloud-provisioned/
+
+chmod -R 777 /home/vagrant/nextcloud-provisioned/nextcloud/ # DO NOT DO THIS EVER JUST FOR THE POC PLEASE GOD
+
+sed -i 's/:8080/:8081/g'  /home/vagrant/nextcloud-provisioned/nextcloud/config/config.php
+
+# Restore database
+
+log 'Delete existing database tables'
+
+mysql -h 172.19.0.2 -u nextcloud -ptest -e "DROP DATABASE nextcloud" 
+
+mysql -h 172.19.0.2 -u nextcloud -ptest -e "CREATE DATABASE nextcloud"
+
+log 'Restore database'
+
+mysql -h 172.19.0.2 -u nextcloud -ptest nextcloud < "${PROVISIONING_FILES}"/nextcloud-sqlbkp-it-lab-final.sql
+
+docker restart nextcloud-provisioned mariadb-provisioned
+
+dnf install --assumeyes openssh-server

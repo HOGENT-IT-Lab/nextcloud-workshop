@@ -1,3 +1,4 @@
 .vagrant
 scripts/nextcloud/nextcloud
 scripts/nextcloud/nextcloud-sqlbkp.sql
+scripts/nextcloud/nextcloud-sqlbkp-it-lab-final.sql
