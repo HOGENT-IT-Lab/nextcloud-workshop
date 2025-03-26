@@ -23,7 +23,7 @@ Slides voor de Nextcloud workshop van het IT-lab
 
 # Meevolgen op:
 
-nextcloud-workshop.it-lab.be/slides <!-- URL naar de slides -->
+https://nextcloud-workshop.it-lab.be/slides <!-- URL naar de slides -->
 
 ![QR bg right contain](./img/link_qr.png) <!-- QR-code naar de slides -->
 
@@ -33,6 +33,8 @@ nextcloud-workshop.it-lab.be/slides <!-- URL naar de slides -->
 
 - Jouw eigen private cloud
 - Grafische interface om eenvoudig in te loggen en bestanden te beheren
+  
+![bg right:60% 90%](./img/nextcloud-login-screen.png) <!-- Plaats voor logo voor openingsslide, foefel gerust met de sizes van de bg -->
 
 
 ---
@@ -49,18 +51,19 @@ nextcloud-workshop.it-lab.be/slides <!-- URL naar de slides -->
 # Demo - Docker
 
 - Opzetten van een eigen Nextcloud instantie
-- 
+- Testomgeving!!
+- Componenten: applicatie + databank
 
 ---
 
-# Compose file (test omgeving!)
+# Compose file
 
 
 <style scoped>
 code {
    font-family:  "Times New Roman", Times, serif;
    overflow-y: auto;
-   max-height: 400px
+   max-height: 400px;
 }
 </style>
 
@@ -89,10 +92,6 @@ services:
       - db
     volumes:
       - /home/vagrant/nextcloud/nextcloud:/var/www/html
-      # - /home/vagrant/nextcloud/apps:/var/www/html/custom_apps
-      # - /home/vagrant/nextcloud/config:/var/www/html/config
-      # - /home/vagrant/nextcloud/data:/var/www/html/data
-      # - /home/vagrant/nextcloud/themes:/var/www/html/themes
     environment:
       - MYSQL_PASSWORD=test
       - MYSQL_DATABASE=nextcloud
@@ -101,3 +100,35 @@ services:
 ```
 
 ---
+
+# Inloggen
+
+- Admin gebruiker aanmaken
+- Beginnen met customizen
+
+---
+
+# Features
+
+- Beheren en managen van gebruikers
+- Shared Folders
+- Verschillende apps beschikbaar
+
+---
+
+# Gebruikers
+
+---
+
+# Shared Folders
+
+- Mappen en directories die je deelt met andere gebruikers
+- Handig voor gedeelde foto's, informatie, ...
+- Persoonlijk gebruik + businessgebruik (klantenportaal)
+
+---
+
+# Apps
+
+- Verschillende toepassingen beschikbaar
+- Zaken zoals een kalender, foto-app, ...
