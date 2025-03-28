@@ -103,20 +103,26 @@ services:
 
 # Inloggen
 
+- Deze use case: surfen naar <ip>:8080 (localhost:8080, 192.168.10.10:8080, ...)
 - Admin gebruiker aanmaken
-- Beginnen met customizen
+- Beginnen met customizen!
 
 ---
 
 # Features
 
 - Beheren en managen van gebruikers
-- Shared Folders
-- Verschillende apps beschikbaar
+- Shared folders
+- Verschillende apps
 
 ---
 
 # Gebruikers
+
+- Maak als administrator gebruikers aan
+- Zet permissies in voor elke gebruiker
+- Groepen managen
+- Beheer zo toegang op jouw eigen cloud
 
 ---
 
@@ -124,11 +130,32 @@ services:
 
 - Mappen en directories die je deelt met andere gebruikers
 - Handig voor gedeelde foto's, informatie, ...
-- Persoonlijk gebruik + businessgebruik (klantenportaal)
+- Persoonlijk gebruik - persoonlijke cloud voor familie 
+- Businessgebruik - klantenportaal
 
 ---
 
 # Apps
 
 - Verschillende toepassingen beschikbaar
-- Zaken zoals een kalender, foto-app, ...
+- Zaken zoals een kalender, foto-app, muziek, ...
+- Indien wenselijk: je zou er zelf ook kunnen creëren
+
+---
+
+# Integraties en mogelijkheden
+
+- Single Sign-On
+- Nextcloud app
+- OnlyOffice (integratie met Teams!)
+
+---
+
+# Customization
+
+- Heel wat opties
+- Leuk voor (personal) branding
+- Feel free to experiment!
+
+---
+
